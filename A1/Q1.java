@@ -1,20 +1,18 @@
 // You are given two sorted array, A and B, where A has a large enough buffer at the end to hold B. Write a method to merge B into A in sorted order
 
 public class Q1 {
-    public static void merge(int[] A, int[] B, int lastA, int lastB) {
-        int indexA = lastA - 1;
-        int indexB = lastB - 1;
-        int indexMerged = lastA + lastB - 1;
+    public static void merge(int[] A, int[] B, int aSize, int bLastIndex) {
+        int i = aSize + bLastIndex;
 
-        while (indexB >= 0) {
-            if (indexA >= 0 && A[indexA] > B[indexB]) {
-                A[indexMerged] = A[indexA];
-                indexA--;
+        while (bLastIndex >= 0) {
+            if (i >= 0 && A[i] > B[bLastIndex]) {
+                A[i] = A[i];
+                i--;
             } else {
-                A[indexMerged] = B[indexB];
-                indexB--;
+                A[i] = B[bLastIndex];
+                bLastIndex--;
             }
-            indexMerged--;
+            i--;
         }
     }
 
@@ -28,7 +26,7 @@ public class Q1 {
 
         int[] B = { 2, 4, 6, 8, 10 };
 
-        merge(A, B, 5, 5);
+        merge(A, B, 5, B.length - 1);
 
         for (int i = 0; i < 10; i++) {
             System.out.print(A[i] + " ");

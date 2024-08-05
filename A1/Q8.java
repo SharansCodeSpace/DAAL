@@ -5,60 +5,32 @@
 // getRankOfNumber(3) = 1
 // getRankOfNumber(4) = 3
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 
 public class Q8 {
     public static void main(String[] args) {
         int[] stream = {5, 1, 4, 4, 5, 9, 7, 13, 3};
 
-        for (int i : stream) {
-            track(i);
-        }
+        Arrays.sort(stream);
 
-        System.out.println(getRankOfNumber(1));
-        System.out.println(getRankOfNumber(3));
-        System.out.println(getRankOfNumber(4));        
+        System.out.println(getRankOfNumber(stream, 1));
+        System.out.println(getRankOfNumber(stream, 3));
+        System.out.println(getRankOfNumber(stream, 4));        
+        System.out.println(getRankOfNumber(stream, 9));        
     }
 
-    private static List<Integer> sortedList = new ArrayList<>();
-
-
-    private static void track(int x) {
-        int pos = findInsertPosition(x);
-        sortedList.add(pos, x);
-    }
-
-    private static int getRankOfNumber(int x) {
+    private static int getRankOfNumber(int stream[], int x) {
         int left = 0;
-        int right = sortedList.size() - 1;
-        int count = 0;
+        int right = stream.length - 1;
 
         while (left <= right) {
             int mid = left + (right - left) / 2;
-            if (sortedList.get(mid) <= x) {
-                count = mid;
+            if (stream[mid] <= x) {
                 left = mid + 1;
             } else {
                 right = mid - 1;
             }
         }
-        return count;
+        return left - 1;
     }
-
-    private static int findInsertPosition(int x) {
-        int left = 0;
-        int right = sortedList.size() - 1;
-
-        while (left <= right) {
-            int mid = left + (right - left) / 2;
-            if (sortedList.get(mid) < x) {
-                left = mid + 1;
-            } else {
-                right = mid - 1;
-            }
-        }
-        return left;
-    }
-
 }
