@@ -1,0 +1,4 @@
+// Imagine you have a 20GB file with one string per line. Explain how you would sort the file.
+
+// Answer
+// The idea is to use the external sort algorithm. We can't bring all the data into memory, so we need to use a divide and conquer approach. We can divide the file into chunks which are x megabytes each, where x is the amount of memory we have available. Each chunk is sorted separately and then saved back to the file system. Once all the chunks are sorted, we merge the chunks one by one. We can use a min heap to keep track of the next element to write to the file. We read the first element of each chunk into the heap and then write the smallest one to the file. We then read the next element from the chunk we took the smallest element from and add it to the heap. We continue this process until all elements have been written to the file. This is the external sort algorithm.
