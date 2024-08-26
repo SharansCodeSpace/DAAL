@@ -1,16 +1,19 @@
 // Given an M*N matrix in which each row and each column is sorted in ascending order, write a method to find an element.
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Q6 {
     public static void main(String[] args) {
-        int[][] matrix = {
-            {1, 2, 3, 4},
-            {5, 6, 7, 8},
-            {9, 10, 11, 12},
-            {13, 14, 15, 16}
-        };
-        int target = 10;
+        Scanner sc = new Scanner(System.in);
+        int m = sc.nextInt();
+        int n = sc.nextInt();
+        int[][] matrix = new int[m][n];
+        for (int i = 0; i < m; i++)
+            for (int j = 0; j < n; j++)
+                matrix[i][j] = sc.nextInt();
+        int target = sc.nextInt();
+        sc.close();
 
         System.out.println(Arrays.toString(findElement(matrix, target)));
     }

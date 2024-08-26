@@ -1,8 +1,12 @@
 // Implement and Explain Tower of Hanoi algorithm
 
+import java.util.Scanner;
+
 public class Q3 {
     public static void main(String[] args) {
-        int n = 3;
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        sc.close();
         towerOfHanoi(n, 'A', 'C', 'B');        
     }
 

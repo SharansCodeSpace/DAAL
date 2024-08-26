@@ -3,13 +3,21 @@
 // Input: find “ball” in {“at”, “”, “”, “ball”, “”, “”, “car”, “”, “”, “dad”, “”,””}
 // Output: 4
 
+import java.util.Scanner;
+
 public class Q5 {
     public static void main(String[] args) {
-        String[] arr = {"at", "", "", "ball", "", "", "car", "", "", "dad", "", ""};
-        String target = "ball";
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        String[] arr = new String[n];
+        sc.nextLine();
+        for (int i = 0; i < n; i++)
+            arr[i] = sc.nextLine();
+        String target = sc.nextLine();
 
+        sc.close();
         System.out.println(findString(arr, target));
-    }    
+    }
 
     public static int findString(String[] arr, String target) {
         if (arr == null || target == null || target.isEmpty()) {

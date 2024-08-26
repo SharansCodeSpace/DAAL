@@ -5,17 +5,21 @@
 // (56, 90) (60, 95) (65, 100) (68, 110) (70, 150) (75, 190)
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Q7 {
     public static void main(String[] args) {
-        int[][] people = {
-            {65, 100},
-            {70, 150},
-            {56, 90},
-            {75, 190},
-            {60, 95},
-            {68, 110}
-        };
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int[][] people = new int[n][2];
+
+        for (int i = 0; i < n; i++) {
+            people[i][0] = sc.nextInt();
+            people[i][1] = sc.nextInt();
+        }
+
+        sc.close();
 
         System.out.println(findLongestTower(people));
     }    

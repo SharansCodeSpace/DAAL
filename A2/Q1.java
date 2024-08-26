@@ -1,11 +1,17 @@
 // Link - https://www.hackerearth.com/practice/algorithms/searching/linear-search/practice-problems/algorithm/employee-rating-8cd8dc10/
 
+import java.util.Scanner;
+
 public class Q1 {
     public static void main(String[] args) {
-        int[] workload = {8, 6, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
-        int N = workload.length;
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] workload = new int[n];
+        for (int i = 0; i < workload.length; i++)
+            workload[i] = sc.nextInt();
+        sc.close();
 
-        System.out.println(getRating(workload, N));
+        System.out.println(getRating(workload, n));
     }
 
     private static int getRating(int[] workload, int N) {
@@ -20,9 +26,7 @@ public class Q1 {
                 cnt = 0;
             }
         }
-
         rating = Math.max(rating, cnt);
-
         return rating;
     }
 }

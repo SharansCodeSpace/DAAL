@@ -3,11 +3,17 @@
 // Input: find 5 in {15, 16, 19, 20, 25, 1, 3, 4, 5, 7, 10, 14}
 // Output: 8 (the index of 5 in the array)
 
+import java.util.Scanner;
 
 public class Q3 {
     public static void main(String[] args) {
-        int[] arr = {15, 16, 19, 20, 25, 1, 3, 4, 5, 7, 10, 14};
-        int target = 5;
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++)
+            arr[i] = sc.nextInt();
+        int target = sc.nextInt();
+        sc.close();
 
         System.out.println(findElement(arr, target));
     }

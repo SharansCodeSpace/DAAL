@@ -11,8 +11,8 @@ public class Q4 {
         int T = sc.nextInt();
 
         int count = 0;
-        for (int i = X; i <= X+s ; i++)
-            for (int j = Y ; j <= Y+s ; j++)
+        for (int i = X; i <= X + s; i++)
+            for (int j = Y ; j <= Y + s ; j++)
                 if (i + j <= T)
                     count++;
 

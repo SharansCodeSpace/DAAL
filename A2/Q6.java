@@ -1,10 +1,17 @@
 // Implement Binary Search Algorithm in Java.
 
+import java.util.Scanner;
+
 public class Q6 {
     public static void main(String[] args) {
-        int[] arr = {1, 10, 53, 78, 98, 223, 239};
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for (int i = 0; i < n; i++)
+            arr[i] = sc.nextInt();
 
-        int key = 78;
+        int key = sc.nextInt();
+        sc.close();
 
         int index = binarySearch(arr, key);
 

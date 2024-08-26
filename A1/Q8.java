@@ -6,17 +6,25 @@
 // getRankOfNumber(4) = 3
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Q8 {
     public static void main(String[] args) {
-        int[] stream = {5, 1, 4, 4, 5, 9, 7, 13, 3};
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        int stream[] = new int[n];
+        for (int i = 0; i < n; i++) {
+            stream[i] = sc.nextInt();
+        }
+        sc.close();
 
         Arrays.sort(stream);
 
         System.out.println(getRankOfNumber(stream, 1));
         System.out.println(getRankOfNumber(stream, 3));
-        System.out.println(getRankOfNumber(stream, 4));        
-        System.out.println(getRankOfNumber(stream, 9));        
+        System.out.println(getRankOfNumber(stream, 4));
+        System.out.println(getRankOfNumber(stream, 9));
     }
 
     private static int getRankOfNumber(int stream[], int x) {
